@@ -14,11 +14,11 @@ class BidsController {
       throw IllegalArgumentException("Cannot bid at lower than the reserve price");
     }
 
-    return Bids.insert(Bid(0, placedBy, forAuction, amount);)
+    return Bids.insert(Bid(0, placedBy, forAuction, amount))
   }
 
   private fun listForAuction(auctionId: Int): ArrayList<Bid> {
-    return Bids.listForAuction(auctionId);
+    return Bids.listForAuction(auctionId)
   }
 
 }

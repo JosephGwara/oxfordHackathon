@@ -12,15 +12,15 @@ object Users : BaseDatabase<User>() {
 
   fun canLogin(username: String, password: String): User {
     val out =
-        rows.firstNotNullOf({
+        rows.firstNotNullOf {
           { it.takeIf { (it.username == username) && (it.password == password) } }
-        })()
+        }()
 
     return out!!
   }
 
   fun getWithId(userId: Int): User {
-    val out = rows.firstNotNullOf({ { it.takeIf { (it.id == userId) } } })()
+    val out = rows.firstNotNullOf { { it.takeIf { (it.id == userId) } } }()
     return out!!
   }
 }
