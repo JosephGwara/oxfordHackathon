@@ -1,3 +1,4 @@
+package com.blockchainbulls.oxfordhackathon
 
 /**
  * Stores user information.

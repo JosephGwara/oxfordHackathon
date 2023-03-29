@@ -1,3 +1,5 @@
+package com.blockchainbulls.oxfordhackathon;
+
 /** Manages a collection of users. */
 class Users {
   val users = arrayListOf<User>()
