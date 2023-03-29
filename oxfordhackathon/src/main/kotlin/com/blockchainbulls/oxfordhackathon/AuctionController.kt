@@ -10,6 +10,11 @@ import TokenHold
 import TokenHolds
 import Token
 import Bids
+import com.blockchainbulls.oxfordhackathon.api_models.AddAuctionRequest
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
+import org.springframework.web.bind.annotation.RequestBody
 
 const val ONE_MINUTE_IN_MILLIS = 60000;
 const val FIFTEEN_MINUTE_IN_MILLIS = ONE_MINUTE_IN_MILLIS * 15;
@@ -17,9 +22,26 @@ const val FIFTEEN_MINUTE_IN_MILLIS = ONE_MINUTE_IN_MILLIS * 15;
 @RestController
 @RequestMapping
 class AuctionController {
-  companion object {
-    const val CONSTANT_IN_COMPANION_OBJECT = "constant at in companion object"
-}
+
+  @PostMapping("/addAuction")
+  fun addAuctionPost(@RequestBody request: AddAuctionRequest): Auction {
+    return addAuction(request.name, request.owner, request.reservePrice, request.tokenType, request.tokenCount)
+  }
+
+  @GetMapping("/listOpenForBidding")
+  fun listOpenForBiddingGet(): List<Auction> {
+    return listOpenForBidding()
+  }
+
+  @PutMapping("cronOpenAuctions")
+  fun cronOpenAuctionsPut() {
+    return cronOpenAuctions()
+  }
+
+  @PutMapping("cronCloseAuctions")
+  fun cronCloseAuctionsPut() {
+    return cronCloseAuctions()
+  }
 
   private fun addAuction(name: String, owner: Int, reservePrice: Double, tokenType: String, tokenCount: Int): Auction {
     // Check if user can fund this auction
