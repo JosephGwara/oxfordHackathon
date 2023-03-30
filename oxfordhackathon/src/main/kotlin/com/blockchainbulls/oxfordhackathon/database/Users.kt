@@ -1,6 +1,7 @@
 package com.blockchainbulls.oxfordhackathon
 
 import BaseDatabase
+import com.blockchainbulls.oxfordhackathon.models.User
 
 /** Manages a collection of users. */
 object Users : BaseDatabase<User>() {

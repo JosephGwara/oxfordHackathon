@@ -1,3 +1,7 @@
+package com.blockchainbulls.oxfordhackathon.models
+
+import TokenHold
+
 data class Token(val type: String, val count: Int) {
   companion object {
     fun TYPE_ERC17(): String = "SOME_SMART_CONTRACT_ID"

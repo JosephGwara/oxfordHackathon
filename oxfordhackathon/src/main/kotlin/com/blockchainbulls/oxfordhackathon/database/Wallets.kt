@@ -1,3 +1,5 @@
+import com.blockchainbulls.oxfordhackathon.models.Token
+import com.blockchainbulls.oxfordhackathon.models.Wallet
 
 object Wallets: BaseDatabase<Wallet>() {
   fun getAvailableOf(tokenType: String, wallet: Wallet): Token {

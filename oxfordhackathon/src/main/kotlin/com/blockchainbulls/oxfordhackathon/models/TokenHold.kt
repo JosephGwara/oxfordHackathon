@@ -1,3 +1,4 @@
+import com.blockchainbulls.oxfordhackathon.models.Token
 
 /**
  * A token holds one type of token.
