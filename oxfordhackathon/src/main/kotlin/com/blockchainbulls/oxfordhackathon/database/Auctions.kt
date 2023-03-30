@@ -1,3 +1,5 @@
+import com.blockchainbulls.oxfordhackathon.models.Auction
+
 object Auctions : BaseDatabase<Auction>() {
   fun insert(auction: Auction): Auction {
     return Auction(0, "", 0, 0, 0, 0.0, 0);

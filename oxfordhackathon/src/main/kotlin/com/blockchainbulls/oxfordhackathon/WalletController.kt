@@ -1,6 +1,6 @@
 package com.blockchainbulls.oxfordhackathon
 
-import Token
+import com.blockchainbulls.oxfordhackathon.models.Token
 import Wallets
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

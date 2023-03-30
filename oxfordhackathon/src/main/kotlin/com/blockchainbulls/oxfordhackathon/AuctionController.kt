@@ -3,12 +3,11 @@ package com.blockchainbulls.oxfordhackathon
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import Auctions
-import Bid
-import Auction
+import com.blockchainbulls.oxfordhackathon.models.Auction
 import Wallets
 import TokenHold
 import TokenHolds
-import Token
+import com.blockchainbulls.oxfordhackathon.models.Token
 import Bids
 import com.blockchainbulls.oxfordhackathon.api_models.AddAuctionRequest
 import org.springframework.web.bind.annotation.GetMapping

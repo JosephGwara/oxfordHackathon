@@ -1,4 +1,4 @@
-package com.blockchainbulls.oxfordhackathon
+package com.blockchainbulls.oxfordhackathon.models
 
 /**
  * Stores user information.

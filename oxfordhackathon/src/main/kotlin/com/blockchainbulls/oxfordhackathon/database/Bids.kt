@@ -1,3 +1,4 @@
+import com.blockchainbulls.oxfordhackathon.models.Bid
 
 object Bids: BaseDatabase<Bid>() {
   fun insert(bid: Bid): Bid {

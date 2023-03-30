@@ -1,10 +1,12 @@
+package com.blockchainbulls.oxfordhackathon.models
+
 data class Auction(
     val id: Int,
     val name: String,
     val owner: Int,
     val status: Int,
     val startedTimestamp: Long,
-    val reservePrice: Double,
+    val reservePrice:Int,
     val wonBy: Int?,
 ) {
   companion object {
