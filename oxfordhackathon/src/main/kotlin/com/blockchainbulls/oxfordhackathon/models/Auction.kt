@@ -1,13 +1,17 @@
 package com.blockchainbulls.oxfordhackathon.models
 
+import org.kethereum.model.Address
+
 data class Auction(
-    val id: Int,
     val name: String,
-    val owner: Int,
-    val status: Int,
-    val startedTimestamp: Long,
+    val blockDeadLine:Int,
     val reservePrice:Int,
-    val wonBy: Int?,
+    val metaData:String,
+    val deedId: Int,
+    val deedIdAddress:Address,
+    val owner: Address,
+    val active: Boolean,
+    val finalized:Boolean,
 ) {
   companion object {
     fun STATUS_NOT_OPEN(): Int = 1

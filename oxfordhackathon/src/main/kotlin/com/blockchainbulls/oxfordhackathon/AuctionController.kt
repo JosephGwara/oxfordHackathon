@@ -53,11 +53,11 @@ class AuctionController {
     }
 
     // Insert new auction
-    val insertedAuction = Auctions.insert(Auction(0, name, owner, Auction.STATUS_NOT_OPEN(), 0, reservePrice, null));
+    val insertedAuction = Auctions.insert(Auction(name, 0,, owner, Auction.STATUS_NOT_OPEN(),, 0, reservePrice, null));
 
     // Hold funds
     val heldToken = Token(tokenType, tokenCount);
-    TokenHolds.insert(TokenHold(heldToken, insertedAuction.id, wallet.address));
+    TokenHolds.insert(TokenHold(heldToken, insertedAuction.deedId, wallet.address));
 
     return insertedAuction;
   }
@@ -73,9 +73,9 @@ class AuctionController {
    */
   private fun cronOpenAuctions(): Unit {
     for(auction in Auctions.listNotOpen()) {
-      val bids = Bids.listForAuction(auction.id);
+      val bids = Bids.listForAuction(auction.deedId);
       if(bids.size > 0) {
-        Auctions.openAuction(auction.id);
+        Auctions.openAuction(auction.deedId);
       }
     }
   }
@@ -90,8 +90,8 @@ class AuctionController {
       val elapsedMillis = System.currentTimeMillis() - auction.startedTimestamp;
 
       if(elapsedMillis > FIFTEEN_MINUTE_IN_MILLIS) {
-        Auctions.closeAuction(auction.id)
-        TokenHolds.deleteForAuction(auction.id);
+        Auctions.closeAuction(auction.deedId)
+        TokenHolds.deleteForAuction(auction.deedId);
       }
     }
   }
